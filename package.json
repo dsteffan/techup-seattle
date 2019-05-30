@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "dotenv": "^8.0.0",
+    "env": "0.0.2",
     "google-map-react": "^1.1.4",
     "google-maps-react": "^2.0.2",
     "react": "^16.8.6",
