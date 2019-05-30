@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 require('dotenv').config();
- 
+
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
- 
+
 class SimpleMap extends Component {
   static defaultProps = {
     center: {
-      lat: 59.95,
-      lng: 30.33
+      lat: 47.608013,
+      lng: -122.335167
     },
     zoom: 11
   };
- 
+
   render() {
     return (
       // Important! Always set the container height explicitly
       <div style={{ height: '100vh', width: '100%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: process.env.GOOGLE_MAPS_GEOCODING_API_KEY }}
+          bootstrapURLKeys={{ key: 'AIzaSyC7u8bJnMAE9H5OckZHCbX4ZYi_ONzv9OI' }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
@@ -32,5 +32,5 @@ class SimpleMap extends Component {
     );
   }
 }
- 
+
 export default SimpleMap;
