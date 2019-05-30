@@ -7,6 +7,7 @@ import Place from './Place';
 require('dotenv').config();
 
 const LocMarker = ({ text }) => <div>{text}</div>;
+const myapikey = `${process.env.REACT_APP_GOOGLE_MAPS_KEY}`
 
 class SimpleMap extends Component {
   constructor(props) {
@@ -46,10 +47,14 @@ class SimpleMap extends Component {
     console.log("clicky");
   }
 
+  shouldComponentUpdate = shouldPureComponentUpdate;
+
   render() {
     let places = this.state.places.map((place, i) => {
       return (
         <Place
+          className="place-marker"
+          key={i}
           lat={place.lat}
           lng={place.lng}
           text={place.text}
@@ -62,9 +67,9 @@ class SimpleMap extends Component {
 
       <div style={{ height: '100%', width: '100%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: 'AIzaSyC7u8bJnMAE9H5OckZHCbX4ZYi_ONzv9OI' }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
+          bootstrapURLKeys={{ key: 'AIzaSyC7u8bJnMAE9H5OckZHCbX4ZYi_ONzv9OI' }}
         >
           {places}
         </GoogleMapReact>
