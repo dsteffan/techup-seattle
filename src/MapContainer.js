@@ -4,7 +4,6 @@ import GoogleMapReact from 'google-map-react';
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 const myapikey = `${process.env.REACT_APP_GOOGLE_MAPS_KEY}`
 require('dotenv').config();
-console.log(myapikey);
 
 class SimpleMap extends Component {
   static defaultProps = {
