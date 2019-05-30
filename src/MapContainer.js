@@ -1,24 +1,36 @@
-import React, {Component} from 'react';
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
-
-export class MapContainer extends Component {
+import React, { Component } from 'react';
+import GoogleMapReact from 'google-map-react';
+require('dotenv').config();
+ 
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
+ 
+class SimpleMap extends Component {
+  static defaultProps = {
+    center: {
+      lat: 59.95,
+      lng: 30.33
+    },
+    zoom: 11
+  };
+ 
   render() {
     return (
-      <Map google={this.props.google} zoom={14}>
-
-        <Marker onClick={this.onMarkerClick}
-                name={'Current location'} />
-
-        <InfoWindow onClose={this.onInfoWindowClose}>
-            <div>
-              <h1>{'Seattle, WA'}</h1>
-            </div>
-        </InfoWindow>
-      </Map>
+      // Important! Always set the container height explicitly
+      <div style={{ height: '100vh', width: '100%' }}>
+        <GoogleMapReact
+          bootstrapURLKeys={{ key: process.env.GOOGLE_MAPS_GEOCODING_API_KEY }}
+          defaultCenter={this.props.center}
+          defaultZoom={this.props.zoom}
+        >
+          <AnyReactComponent
+            lat={59.955413}
+            lng={30.337844}
+            text="My Marker"
+          />
+        </GoogleMapReact>
+      </div>
     );
   }
 }
-
-export default GoogleApiWrapper({
-  apiKey: (process.env.GOOGLE_MAPS_GEOCODING_API_KEY)
-})(MapContainer)
+ 
+export default SimpleMap;
