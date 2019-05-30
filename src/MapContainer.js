@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PropTypes, Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 require('dotenv').config();
 

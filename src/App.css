@@ -23,6 +23,10 @@
   color: #61dafb;
 }
 
+.map-div {
+  height: 70vh;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
