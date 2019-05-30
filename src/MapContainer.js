@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
+import React, { PropTypes, Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-require('dotenv').config()
  
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 const myapikey = `${process.env.REACT_APP_GOOGLE_MAPS_KEY}`
+require('dotenv').config();
 
 class SimpleMap extends Component {
   static defaultProps = {
     center: {
-      lat: 59.95,
-      lng: 30.33
+      lat: 47.608013,
+      lng: -122.335167
     },
     zoom: 11
   };
- 
+
   render() {
     return (
       // Important! Always set the container height explicitly
@@ -33,5 +33,5 @@ class SimpleMap extends Component {
     );
   }
 }
- 
-export default SimpleMap
+
+export default SimpleMap;

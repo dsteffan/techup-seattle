@@ -12,7 +12,9 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
       </header>
-      <MapContainer />
+      <div className="map-div">
+        <MapContainer />
+      </div>
     </div>
   );
 }
