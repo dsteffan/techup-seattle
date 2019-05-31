@@ -6,7 +6,8 @@ import {placeStyle} from './placeStyle';
 
 export default class Place extends Component {
   static propTypes = {
-    text: PropTypes.string
+    text: PropTypes.string,
+    link: PropTypes.string
   };
 
   static defaultProps = {};
@@ -18,6 +19,7 @@ export default class Place extends Component {
       <div
         style={placeStyle}
       >
+      <a href="{this.props.link}"></a>
         {this.props.text}
       </div>
     );
