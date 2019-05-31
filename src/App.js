@@ -5,14 +5,14 @@ import Navbar from './Navbar';
 const moment = require('moment')
 
 
-const dataFile = require('./events_formatted.json')
+const dataFile = require('./events.json')
 const stringData = JSON.stringify(dataFile);
 console.log(stringData);
 const events = JSON.parse(stringData);
 
 console.log(events.name)
 
-const placePool = [
+let placePool = [
   {
     text: '5:00pm',
     date: '2019-05-31',
@@ -29,12 +29,13 @@ const placePool = [
   }
 ]
 
+let defaultFilter = moment(new Date()).format().match(/.{10}/)[0]
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      filter: moment(new Date()).format().match(/.{10}/)[0],
+      filter: defaultFilter,
       places: [],
     };
   };
@@ -52,11 +53,21 @@ class App extends Component {
   setFilter = (e) => {
     let dateFilter = e.target.textContent.match(/Events (.+)/)[1].toLowerCase()
     console.log(dateFilter);
-    console.log(this.state.places.filter(eventObj => eventObj.date === this.state.filter));
+    console.log(this.state.filter);
+    console.log(this.state.places);
     if (dateFilter === 'today') {
       let today = new Date();
       today = moment(today).format().match(/.{10}/)[0]
-      this.setState({filter: today})
+      console.log(today);
+      let eventsList = placePool.filter((el) => {
+        return el.date === this.state.filter
+      });
+      this.setState(
+        {
+          filter: today,
+          places: eventsList
+        }
+      )
     } else {
       // this.setState({filter: today})
     }
