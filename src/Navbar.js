@@ -11,16 +11,14 @@ export default class Navbar extends Component {
 			      <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
 			      <ul className="right hide-on-med-and-down">
 			        <li><a href="https://www.meetup.com/">Meetup</a></li>
-			        <li><a href="#">Events Today</a></li>
-			        <li><a href="#">Events Tomorrow</a></li>
-			        <li><a href="#">About Us</a></li>
+			        <li><a onClick={this.props.clickHandler}>Events Today</a></li>
+			        <li><a onClick={this.props.clickHandler}>Events Tomorrow</a></li>
 			      </ul>
 			    </div>
 			  	<ul className="sidenav" id="mobile-demo">
 				    <li><a href="https://www.meetup.com/">Meetup</a></li>
-				    <li><a href="#">Events Today</a></li>
-				    <li><a href="#">Events Tomorrow</a></li>
-				    <li><a href="#">About Us</a></li>
+				    <li><a onClick={this.props.clickHandler}>Events Today</a></li>
+				    <li><a onClick={this.props.clickHandler}>Events Tomorrow</a></li>
 			 	</ul>
 			  </nav>
 			)
