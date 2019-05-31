@@ -15,6 +15,7 @@ const placeStyle = {
   paddingTop: 3,
   paddingRight: 3,
   paddingBottom: 7,
+
   cursor: 'pointer'
 };
 
