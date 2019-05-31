@@ -13,20 +13,7 @@ class SimpleMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      places: [
-        {
-          text: '5:00pm',
-          link: 'www.google.com',
-          lat: 47.628013,
-          lng: -122.355167
-        },
-        {
-          text: '8:00pm',
-          link: 'www.google.com',
-          lat: 47.648013,
-          lng: -122.375167
-        }
-      ],
+
     };
 
   }
@@ -52,7 +39,7 @@ class SimpleMap extends Component {
   shouldComponentUpdate = shouldPureComponentUpdate;
 
   render() {
-    let places = this.state.places.map((place, i) => {
+    let places = this.props.places.map((place, i) => {
       return (
         <Place
           className="place-marker"
