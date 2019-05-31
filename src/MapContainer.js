@@ -21,12 +21,14 @@ class SimpleMap extends Component {
     this.state = {
       places: [
         {
-          text: 'C',
+          text: '5:00pm',
+          link: 'www.google.com',
           lat: 47.628013,
           lng: -122.355167
         },
         {
-          text: 'D',
+          text: '8:00pm',
+          link: 'www.google.com',
           lat: 47.648013,
           lng: -122.375167
         }
@@ -64,6 +66,7 @@ class SimpleMap extends Component {
           lat={place.lat}
           lng={place.lng}
           text={place.text}
+          link={place.link}
           onClick={this.handleClick}
         />
       )
@@ -75,7 +78,7 @@ class SimpleMap extends Component {
         <GoogleMapReact
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
-          bootstrapURLKeys={{ key: myapikey  }}
+          bootstrapURLKeys={{ key: myapikey }}
         >
           {places}
         </GoogleMapReact>
