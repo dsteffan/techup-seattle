@@ -15,17 +15,17 @@ export default class Navbar extends Component {
 			      <a href="#!" class="brand-logo">Gathering Spot</a>
 			      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 			      <ul class="right hide-on-med-and-down">
-			        <li><a href="sass.html">Sass</a></li>
-			        <li><a href="badges.html">Components</a></li>
-			        <li><a href="collapsible.html">Javascript</a></li>
-			        <li><a href="mobile.html">Mobile</a></li>
+			        <li><a href="https://www.meetup.com/">Meetup</a></li>
+			        <li><a href="#">Events Today</a></li>
+			        <li><a href="#">Events Tomorrow</a></li>
+			        <li><a href="#">About Us</a></li>
 			      </ul>
 			    </div>
 			  	<ul class="sidenav" id="mobile-demo">
-				    <li><a href="sass.html">Sass</a></li>
-				    <li><a href="badges.html">Components</a></li>
-				    <li><a href="collapsible.html">Javascript</a></li>
-				    <li><a href="mobile.html">Mobile</a></li>
+				    <li><a href="https://www.meetup.com/">Meetup</a></li>
+				    <li><a href="#">Events Today</a></li>
+				    <li><a href="#">Events Tomorrow</a></li>
+				    <li><a href="#">About Us</a></li>
 			 	</ul>
 			  </nav>
 
