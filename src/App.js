@@ -11,12 +11,14 @@ class App extends Component {
       places: [
         {
           text: '5:00pm',
+          date: 'today',
           link: 'www.google.com',
           lat: 47.628013,
           lng: -122.355167
         },
         {
           text: '8:00pm',
+          date: 'tomorrow',
           link: 'www.google.com',
           lat: 47.648013,
           lng: -122.375167
@@ -24,15 +26,16 @@ class App extends Component {
       ],
     };
   };
-  changeLocations = (e) => {
-    console.log(e.target);
-    // this.setState({filter: e.target.value})
+  setFilter = (e) => {
+    console.log(e.target.textContent.match(/Events (.+)/)[1].toLowerCase());
+    this.setState({filter: e.target.textContent.match(/Events (.+)/)[1].toLowerCase()})
+    console.log(this.state.places.filter(eventObj => eventObj.date === this.state.filter));
   }
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <Navbar clickHandler={this.changeLocations} />
+          <Navbar clickHandler={this.setFilter} />
         </header>
         <div className="map-div">
           <MapContainer places={this.state.places} />
