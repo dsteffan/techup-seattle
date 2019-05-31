@@ -27,6 +27,10 @@
   height: 70vh;
 }
 
+.nav-wrapper{
+  background-color: #ff2d55;
+}
+
 .place-marker:hover {
   cursor: pointer;
 }
