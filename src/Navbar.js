@@ -11,17 +11,17 @@ export default class Navbar extends Component {
 	render() {
 		return(
 			  <nav>
-			    <div class="nav-wrapper">
-			      <a href="#!" class="brand-logo">Gathering Spot</a>
-			      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-			      <ul class="right hide-on-med-and-down">
+			    <div className="nav-wrapper">
+			      <a href="#!" className="brand-logo"> <img src="" alt=""/> Gathering Spot</a>
+			      <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+			      <ul className="right hide-on-med-and-down">
 			        <li><a href="https://www.meetup.com/">Meetup</a></li>
 			        <li><a href="#">Events Today</a></li>
 			        <li><a href="#">Events Tomorrow</a></li>
 			        <li><a href="#">About Us</a></li>
 			      </ul>
 			    </div>
-			  	<ul class="sidenav" id="mobile-demo">
+			  	<ul className="sidenav" id="mobile-demo">
 				    <li><a href="https://www.meetup.com/">Meetup</a></li>
 				    <li><a href="#">Events Today</a></li>
 				    <li><a href="#">Events Tomorrow</a></li>
