@@ -44,9 +44,9 @@ class SimpleMap extends Component {
         <Place
           className="place-marker"
           key={i}
-          lat={place.lat}
-          lng={place.lng}
-          text={place.text}
+          lat={place.group.lat}
+          lng={place.group.lng}
+          text={place.local_time}
           link={place.link}
           onClick={this.handleClick}
         />

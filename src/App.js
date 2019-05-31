@@ -7,10 +7,8 @@ const moment = require('moment')
 
 const dataFile = require('./events.json')
 const stringData = JSON.stringify(dataFile);
-console.log(stringData);
 const events = JSON.parse(stringData);
-
-console.log(events.name)
+console.log(events.events);
 
 let placePool = [
   {
@@ -49,6 +47,7 @@ class App extends Component {
   }
   componentDidMount = () => {
     console.log(this.state.filter);
+    this.setState({places:events.events})
   }
   setFilter = (e) => {
     let dateFilter = e.target.textContent.match(/Events (.+)/)[1].toLowerCase()
@@ -59,8 +58,8 @@ class App extends Component {
       let today = new Date();
       today = moment(today).format().match(/.{10}/)[0]
       console.log(today);
-      let eventsList = placePool.filter((el) => {
-        return el.date === this.state.filter
+      let eventsList = events.events.filter((el) => {
+        return el.local_date === this.state.filter
       });
       this.setState(
         {
@@ -69,7 +68,18 @@ class App extends Component {
         }
       )
     } else {
-      // this.setState({filter: today})
+      let today = new Date();
+      today = moment(today).add(1,'days').format().match(/.{10}/)[0]
+      console.log(today);
+      let eventsList = events.events.filter((el) => {
+        return el.local_date === this.state.filter
+      });
+      this.setState(
+        {
+          filter: today,
+          places: eventsList
+        }
+      )
     }
   }
   render() {
