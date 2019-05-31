@@ -9,6 +9,12 @@ require('dotenv').config();
 const LocMarker = ({ text }) => <div>{text}</div>;
 const myapikey = `${process.env.REACT_APP_GOOGLE_MAPS_KEY}`
 
+const dataFile = require('./events_formatted.json')
+const stringData = JSON.stringify(dataFile);
+console.log(stringData);
+const events = JSON.parse(stringData);
+
+
 class SimpleMap extends Component {
   constructor(props) {
     super(props);
