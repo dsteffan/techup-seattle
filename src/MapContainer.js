@@ -13,18 +13,7 @@ class SimpleMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      places: [
-        {
-          text: 'C',
-          lat: 47.628013,
-          lng: -122.355167
-        },
-        {
-          text: 'D',
-          lat: 47.648013,
-          lng: -122.375167
-        }
-      ],
+
     };
 
   }
@@ -50,14 +39,15 @@ class SimpleMap extends Component {
   shouldComponentUpdate = shouldPureComponentUpdate;
 
   render() {
-    let places = this.state.places.map((place, i) => {
+    let places = this.props.places.map((place, i) => {
       return (
         <Place
           className="place-marker"
           key={i}
-          lat={place.lat}
-          lng={place.lng}
-          text={place.text}
+          lat={place.group.lat}
+          lng={place.group.lng}
+          text={place.local_time}
+          link={place.link}
           onClick={this.handleClick}
         />
       )
@@ -69,7 +59,7 @@ class SimpleMap extends Component {
         <GoogleMapReact
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
-          bootstrapURLKeys={{ key: 'AIzaSyC7u8bJnMAE9H5OckZHCbX4ZYi_ONzv9OI' }}
+          bootstrapURLKeys={{ key: myapikey }}
         >
           {places}
         </GoogleMapReact>
